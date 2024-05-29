@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUIZ</title>
+    <script src="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/lib/index.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <section class="flex justify-between gap-2 m-5 sm:m-10">
+        <div class="flex flex-col justify-center items-start gap-6 p-5 font-bold shadow-2xl bg-gray-300 flex-grow">
+            <p>Question 4:</p>
+            <p>Which river is also known as the "Ganga of the South"?</p>
+            <label>
+                <input type="radio" name="option" value="Godavari" class="ml-3"> Godavari
+            </label>
+            <label>
+                <input type="radio" name="option" value="Krishna" class="ml-3"> Krishna
+            </label>
+            <label>
+                <input type="radio" name="option" value="Kaveri" class="ml-3"> Kaveri
+            </label>
+            <button class="submit bg-green-500 text-white px-3 rounded-md font-semibold">Submit</button>
+            <button class="clear bg-red-500 text-white px-3 rounded-md font-semibold">Clear response</button>
+        </div>
+        <div class="flex flex-col justify-around items-center gap-6 p-5 shadow-2xl bg-gray-300 ">
+            <a href="quiz1.html"> 1 <i class="questionstatus1 fa-regular fa-clipboard "></i></a>
+            <a href="quiz2.html"> 2 <i class="questionstatus2 fa-regular fa-clipboard "></i></a>
+            <a href="quiz3.html"> 3 <i class="questionstatus3 fa-regular fa-clipboard "></i></a>
+            <a href="quiz4.html"> 4 <i class="questionstatus4 fa-regular fa-clipboard "></i></a>
+            <a href="quiz5.html"> 5 <i class="questionstatus5 fa-regular fa-clipboard "></i></a>
+        </div>
+    </section>
+
+    <div class="flex justify-between">
+        <a href="quiz3.html"><button class=" bg-gray-900 text-white p-2 rounded-md font-bold text-lg ml-5 sm:ml-10"><i class="fa-solid fa-arrow-left" style="color: #e9eaed;"></i> Previous</button></a>
+
+        <a href="quiz5.html"><button class=" bg-gray-900 text-white p-2 rounded-md font-bold text-lg mr-5 sm:mr-10">Next <i
+                    class="fa-solid fa-arrow-right" style="color: #eeeff1;"></i></button></a>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let submit = document.querySelector(".submit")
+            let clear = document.querySelector(".clear")
+
+            submit.addEventListener("click", () => {
+                if (document.querySelector('input[name="option"]:checked') === null) {
+                    alert("Please select an option")
+                }
+                else {
+                    const answer = 'Godavari'
+                    const answerselected = document.querySelector('input[name="option"]:checked').value;
+                    let score = localStorage.getItem('score') || 0;
+                    if (answerselected === answer) {
+                        score++;
+                    }
+                    localStorage.setItem('score', score);
+                }
+            })
+
+            clear.addEventListener("click", () => {
+                let checkedOption = document.querySelector('input[name="option"]:checked');
+                if (checkedOption) {
+                    checkedOption.checked = false;
+                }
+
+            })
+        })
+    </script>
+</body>
+
+</html>

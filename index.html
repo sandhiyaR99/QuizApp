@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <script src="
+https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/lib/index.min.js
+"></script>
+    <link href="
+https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css
+" rel="stylesheet">
+</head>
+
+<body class=" bg-gray-300">
+    <section class="text-center mt-10">
+        <h1 class="text-xl font-bold mb-7">Welcome</h1>
+        <p class=" font-semibold mb-6">Please enter your credentials to log in and begin your test</p>
+        <form action="instruction.html">
+            <label for="name" class="font-semibold">Name: </label>
+            <input id="name" type="text" name="name" class="border border-black mb-3 p-1" required>
+            <br>
+            <label for="email" class="font-semibold">Email: </label>
+            <input id="email" type="email" name="email" class="border border-black mb-3 p-1" required>
+            <br>
+            <button type="submit" class="text-white bg-black px-4 py-1 rounded-md font-semibold">Submit</button>
+        </form>
+    </section>
+</body>
+
+</html>
